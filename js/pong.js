@@ -11,7 +11,7 @@ player = {
   height: 100,
 
   update: function() {},
-  draw: function ( {
+  draw: function () {
     ctx.fillRect(this.x, this.y, this.width, this.height);
   }
 };
@@ -23,7 +23,7 @@ ai = {
   height: 100,
 
   update: function() {},
-  draw: function ( {
+  draw: function () {
     ctx.fillRect(this.x, this.y, this.width, this.height);
   }
 };
@@ -33,7 +33,7 @@ ball = {
   y: null,
   side: 20,
   update: function() {},
-  draw: function ( {
+  draw: function () {
     ctx.fillRect(this.x, this.y, this.side, this.side);
   }
 };
@@ -59,14 +59,25 @@ function main() {
 
 function init() {
   player.x = player.width;
-  player.y = (HEIGHT = player.height)/2;
+  player.y = (HEIGHT - player.height)/2;
 
   ai.x = WIDTH - (player.width + ai.width);
+  ai.y = (HEIGHT - ai.height)/2;
 
   ball.x = (WIDTH - ball.side)/2;
   ball.y = (HEIGHT - ball.side)/2;
 }
 
-function update() {}
+function update() {
+  ball.update();
+player.update();
+ai.update();
+}
 
-function draw() {}
+function draw() {
+ball.draw();
+player.draw();
+ai.draw();
+}
+
+main();
