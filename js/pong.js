@@ -56,7 +56,10 @@ ball = {
   if (AABBIntersect(pdle.x, pdle.y, pdle.width, pdle.height,
     this.x, this.y, this.side, this.side)
  ) {
-   this.vel.x *= -1;
+   var n = (this.y+this.side - pdle.y)/(pdle.height+this.side);
+   var phi = 0.25*pi*(2*n -1);
+   this.vel.x = (pdle===player ? 1 : -1)*this.speed*Math.cos(phi);
+   this.vel.y = this.speed*Math.sin(phi);
  }
 
   },
