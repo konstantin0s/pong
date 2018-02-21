@@ -57,7 +57,15 @@ function main() {
   window.requestAnimationFrame(loop, canvas);
 }
 
-function init() {}
+function init() {
+  player.x = player.width;
+  player.y = (HEIGHT = player.height)/2;
+
+  ai.x = WIDTH - (player.width + ai.width);
+
+  ball.x = (WIDTH - ball.side)/2;
+  ball.y = (HEIGHT - ball.side)/2;
+}
 
 function update() {}
 
