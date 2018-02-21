@@ -1,0 +1,21 @@
+body {
+  background-color: silver;
+}
+
+canvas {
+  position: absolute;
+  margin: auto;
+  top: 40;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+h1 {
+  text-align: center;
+  margin: auto;
+  color: white;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
