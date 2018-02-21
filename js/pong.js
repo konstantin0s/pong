@@ -84,7 +84,16 @@ ball.draw();
 player.draw();
 ai.draw();
 
-ctx.retore();
+var w = 4;
+var x = (WIDTH -w)*0.5;
+var y = 0;
+var step = HEIGHT/15;
+while(y < HEIGHT) {
+  ctx.fillRect(x, y+step*0.25, w, step*0.5);
+  y += step;
+}
+
+ctx.restore();
 }
 
 main();
