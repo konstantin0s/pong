@@ -48,10 +48,22 @@ ball = {
       this.y += 2*offset;
       this.vel.y *= -1;
     }
+ var AABBIntersect = function(ax, ay, aw, ah, bx, by, bw, bh) {
+   return ax < bx+bw && ay < by+bh && bx < ax+aw && by < ay+ah;
+ };
+
+ var pdle = this.vel.x < 0 ? player : ai;
+  if (AABBIntersect(pdle.x, pdle.y, pdle.width, pdle.height,
+    this.x, this.y, this.side, this.side)
+ ) {
+   this.vel.x *= -1;
+ }
+
   },
   draw: function () {
     ctx.fillRect(this.x, this.y, this.side, this.side);
   }
+
 };
 
 
