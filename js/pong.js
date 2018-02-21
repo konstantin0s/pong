@@ -42,6 +42,10 @@ ball = {
   update: function() {
     this.x += this.vel.x;
     this.y += this.vel.y;
+
+    if (0 > this.y || this.y+this.side > HEIGHT) {
+      this.vel.y *= -1;
+    }
   },
   draw: function () {
     ctx.fillRect(this.x, this.y, this.side, this.side);
